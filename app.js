@@ -14,7 +14,7 @@ const app        = express(),
   mongoose.connect('mongodb://mongo:27017/router-auth', { useNewUrlParser: true });
 
   app.set('view engine', 'ejs');
-  app.use(express.static(`${__dir}/public`));
+  app.use(express.static(`${__dirname}/public`));
   app.use(bodyParser.urlencoded({ extended: true }));
 
   app.use(expressSession({
