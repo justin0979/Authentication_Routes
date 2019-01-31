@@ -1,0 +1,9 @@
+body {
+  background-color: grey;
+  text-align: center;
+}
+
+.menu {
+  background-color: black;
+  opacity: 0.3;
+}

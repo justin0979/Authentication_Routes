@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "express": "*",
+    "express-session": "*",
+    "body-parser": "*",
+    "ejs": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "passport-local-mongoose": "*"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}
