@@ -1,0 +1,17 @@
+<% include ../partials/header %>
+
+    <h1>Add A New Thing To The Stuff</h1>
+
+    <form action='/index' method='POST'>
+      <div>
+        <label>Item:</label>
+        <input type='text' name='material[item]' placeholder='item'>
+      </div>
+      <div>
+        <label>Description:</label>
+        <textarea name='material[description]'></textarea>
+      </div>
+      <button>Add This</button>
+    </form>
+
+<% include ../partials/footer %>
