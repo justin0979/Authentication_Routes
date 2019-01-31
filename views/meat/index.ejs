@@ -1,0 +1,14 @@
+<% include ../partials/header %>
+
+    <h1>The Good Stuff</h1>
+    
+    <ol>
+      <% material.forEach(thing => { %>
+        <li>
+            <label>Item:</label><%= thing.item %><br>
+            <label>Description:</label><%= thing.description %></br>
+        </li>
+      <% }) %>
+    </ol>
+
+<% include ../partials/footer %>
