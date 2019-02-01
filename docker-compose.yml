@@ -9,6 +9,8 @@ services:
     volumes:
       - /usr/src/app/node_modules
       - .:/usr/src/app
+    depends_on:
+      - mongo
   mongo:
     image: mongo:latest
     command: --smallfiles
