@@ -26,7 +26,7 @@ router.post('/index', isLoggedIn, (req, res) => {
 });
 
 // Show Route
-router.get('/index/:id', (req, res) => {
+router.get('/index/:id', isLoggedIn, (req, res) => {
   Material.findById(req.params.id)
     .then(material => res.render(`meat/show`, { material: material }))
     .catch(err => console.log(err));
