@@ -45,6 +45,7 @@ button {
   margin-top: 50px;
   font-size: 30px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 a {
@@ -72,3 +73,21 @@ li {
     height: 40px;
 }
 
+#show-h1 {
+ padding-top: 2%; 
+}
+
+#index-h1 {
+  padding-top: 1%;
+}
+
+#index-a {
+  display: block;
+  background-color: blue;
+  font-size: 150%;
+  height: 60px;
+  width: 180px;
+  margin: 0 auto 0 auto;
+  line-height: 60px;
+  border-radius: 15px;
+}
