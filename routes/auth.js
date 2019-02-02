@@ -7,7 +7,7 @@ router.get('/register', (req, res) => res.render('auth/register'));
 
 router.post('/register', (req, res) => {
   User.register(new User({ username: req.body.username }), req.body.password)
-  .then(user => res.render('mea/index'))
+  .then(user => res.render('meat/index'))
   .catch(err => res.redirect('/login'));
 });
 

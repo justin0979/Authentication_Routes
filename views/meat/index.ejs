@@ -1,6 +1,6 @@
 <% include ../partials/header %>
 
-    <h1>The Good Stuff</h1>
+    <h1 id='index-h1'>The Good Stuff</h1>
     
     <ol>
       <% material.forEach(thing => { %>
@@ -13,7 +13,8 @@
             </form>
         </li>
       <% }) %>
+      
+      <a id='index-a' href='/index/new'>Add New Item</a>
     </ol>
-    <a href='/index/new'>Add New Item</a>
 
 <% include ../partials/footer %>
