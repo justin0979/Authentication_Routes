@@ -18,10 +18,10 @@ router.get('/index', (req, res) => {
 });
 
 // New Route
-router.get('/index/new', (req, res) => res.render('meat/new'));
+router.get('/index/new', isLoggedIn, (req, res) => res.render('meat/new'));
 
 // Create Route
-router.post('/index', (req, res) => {
+router.post('/index', isLoggedIn, (req, res) => {
   Material.create(req.body.material)
   .then(newMaterial => res.redirect('/index'))
   .catch(err => res.render('meat/error', { err: err }));
