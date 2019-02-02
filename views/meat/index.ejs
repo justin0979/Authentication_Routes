@@ -1,12 +1,12 @@
 <% include ../partials/header %>
 
-    <h1 id='index-h1'>The Good Stuff</h1>
+    <h1 class='header-h1'>The Good Stuff</h1>
     
     <ol>
       <% material.forEach(thing => { %>
         <li>
             <label>Item:</label><%= thing.item %><br>
-            <label>Description:</label><%= thing.description %></br>
+            <label>Description:</label><%- thing.description %></br>
             
             <form class='moreInfo' action='/index/<%= thing._id %>' method='GET'>
               <button class='moreInfo'>More Info</button>
