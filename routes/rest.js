@@ -66,4 +66,5 @@ router.delete('/index/:id', (req, res) => {
     else res.redirect('/index');
   });
 });
+
 module.exports = router;

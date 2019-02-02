@@ -1,21 +1,23 @@
 const express   = require('express'),
       passport  = require('passport'),
       router    = express.Router(),
-      User      = require('../models/user');
+      User      = require('../models/user'),
+      Material  = require('../models/material');
 
 router.get('/register', (req, res) => res.render('auth/register'));
 
 router.post('/register', (req, res) => {
   User.register(new User({ username: req.body.username }), req.body.password)
-  .then(user => res.render('meat/index'))
-  .catch(err => res.redirect('/login'));
+  .then(user => passport.authenticate('local')(req, res, () => res.redirect('/index')))
+//  .catch(err => res.redirect('/login'));
+  .catch(err => res.render('meat/error', { err: err }));
 });
 
 router.get('/login', (req, res) => res.render('auth/login'));
 
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/index',
-  failureRedirect: '/login'
+  failureRedirect: '/register'
   }), (req, res) => {});
 
 router.get('/logout', (req, res) => {
