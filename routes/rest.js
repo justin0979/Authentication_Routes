@@ -9,20 +9,27 @@ function isLoggedIn(req, res, next) {
 }
 
 // Index Route
-router.get('/index', isLoggedIn, (req, res) => {
+router.get('/index', (req, res) => {
   Material.find({})
   .then(foundMaterial => res.render('meat/index', { material: foundMaterial }))
   .catch(err => res.render('meat/error', { err: err }));
 });
 
 // New Route
-router.get('/index/new', (req, res) => res.render('new'));
+router.get('/index/new', (req, res) => res.render('meat/new'));
 
 // Create Route
 router.post('/index', isLoggedIn, (req, res) => {
   Material.create(req.body.material)
   .then(newMaterial => res.redirect('/index'))
   .catch(err => res.render('meat/error', { err: err }));
+});
+
+// Show Route
+router.get('/index/:id', isLoggedIn, (req, res) => {
+  Material.findById(req.params.id)
+    .then(material => res.render(`meat/show`, { material: material }))
+    .catch(err => console.log(err));
 });
 
 module.exports = router;

@@ -20,6 +20,12 @@ input {
   font-size: 20px;
 }
 
+textarea {
+  margin-top: 10px;
+  width: 275px;
+  height: 55px;
+}
+
 form {
   margin-top: 50px;
 }
@@ -46,9 +52,23 @@ a {
   margin: 0 50px 0 50px;
 }
 
+ol {
+    margin: 1% 30% 3% 30%;
+}
+
+li {
+    margin: 2em 0 2em 0;
+}
+
 .menu {
   padding-top: 35px;
   background-color: black;
   color: white;
   height: 50px;
 }
+
+.moreInfo {
+    margin: 10px 0 0 0;
+    height: 40px;
+}
+

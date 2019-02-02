@@ -7,8 +7,13 @@
         <li>
             <label>Item:</label><%= thing.item %><br>
             <label>Description:</label><%= thing.description %></br>
+            
+            <form class='moreInfo' action='/index/<%= thing._id %>' method='GET'>
+              <button class='moreInfo'>More Info</button>
+            </form>
         </li>
       <% }) %>
     </ol>
+    <a href='/index/new'>Add New Item</a>
 
 <% include ../partials/footer %>
