@@ -1,7 +1,21 @@
 <% include ../partials/header %>
 
-    <h1 id='show-h1'>More Info For The <%= material.item %></h1>
+    <h1>Make Information for <%= material.item %></h1>
 
-
+    <div>
+      <div>
+        <label>Item</label><br>
+        <%= material.item %>
+      </div>
+      <div>
+        <label>Description</label>
+      </div>
+      <div>
+        <%- material.description %>
+      </div>
+      <form action='/index/<%- material._id %>/edit' method='get'>
+        <button>Make Changes</button>
+      </form>
+    </div>
 
 <% include ../partials/footer %>

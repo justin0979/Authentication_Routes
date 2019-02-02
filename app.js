@@ -1,10 +1,12 @@
 const express               = require('express'),
       expressSession        = require('express-session'),
+      expressSanitizer      = require('express-sanitizer'),
       mongoose              = require('mongoose'),
       bodyParser            = require('body-parser'),
       passport              = require('passport'),
       LocalStrategy         = require('passport-local'),
       passportLocalMongoose = require('passport-local-mongoose'),
+      methodOverride        = require('method-override'),
       User                  = require('./models/user');
 
 const indexRoutes           = require('./routes/index'),
@@ -20,6 +22,8 @@ mongoose.connect('mongodb://mongo:27017/router-auth', { useNewUrlParser: true })
 app.set('view engine', 'ejs');
 app.use(express.static(`${__dirname}/public`));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(expressSanitizer());
+app.use(methodOverride('_method'));
 
 app.use(expressSession({
   secret: "Hello again, shhhh",

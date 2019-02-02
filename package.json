@@ -2,6 +2,8 @@
   "dependencies": {
     "express": "*",
     "express-session": "*",
+    "express-sanitizer": "*",
+    "method-override": "*",
     "body-parser": "*",
     "ejs": "*",
     "mongoose": "*",
