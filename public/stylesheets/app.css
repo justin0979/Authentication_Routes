@@ -35,6 +35,8 @@ label {
   font-size: 20px;
   font-weight: 550;
   border-bottom: 1px solid black;
+  height: 100px;
+  line-height: 50px;
 }
 
 button {
@@ -73,6 +75,10 @@ li {
     height: 40px;
 }
 
+.textareaGroup * {
+  vertical-align: middle;
+}
+
 #show-h1 {
  padding-top: 2%; 
 }
@@ -81,13 +87,17 @@ li {
   padding-top: 1%;
 }
 
-#index-a {
+.anchors {
   display: block;
   background-color: blue;
   font-size: 150%;
   height: 60px;
   width: 180px;
-  margin: 0 auto 0 auto;
+  margin: 10px auto 0 auto;
   line-height: 60px;
   border-radius: 15px;
+}
+
+.go-back {
+ color: white; 
 }
