@@ -29,6 +29,9 @@ textarea {
 form {
   margin-top: 50px;
 }
+  .top-space {
+    margin-top: 10px;
+  }
 
 label {
   margin: 0 7px 0 7px;
@@ -49,11 +52,30 @@ button {
   font-weight: 600;
   cursor: pointer;
 }
+  .delete {
+    margin-top: 0;
+    background-color: red;
+    color: white;
+    border: 5px solid white;
+  }
 
 a {
   color: white;
   margin: 0 50px 0 50px;
 }
+  .anchors {
+    display: block;
+    background-color: blue;
+    font-size: 150%;
+    height: 60px;
+    width: 180px;
+    margin: 10px auto 0 auto;
+    line-height: 60px;
+    border-radius: 15px;
+  }
+  .go-back {
+   color: white; 
+  }
 
 ol {
     margin: 1% 30% 3% 30%;
@@ -79,25 +101,7 @@ li {
   vertical-align: middle;
 }
 
-#show-h1 {
+.header-h1 {
  padding-top: 2%; 
 }
 
-#index-h1 {
-  padding-top: 1%;
-}
-
-.anchors {
-  display: block;
-  background-color: blue;
-  font-size: 150%;
-  height: 60px;
-  width: 180px;
-  margin: 10px auto 0 auto;
-  line-height: 60px;
-  border-radius: 15px;
-}
-
-.go-back {
- color: white; 
-}
