@@ -35,7 +35,7 @@ router.get('/index/:id', (req, res) => {
 });
 
 // Edit Route
-router.get('/index/:id/edit', (req, res) => {
+router.get('/index/:id/edit', isLoggedIn, (req, res) => {
   Material.findById(req.params.id)
   .then(material => res.render(`meat/edit`, { material: material }))
   .catch(err => res.render('meat/error'));
@@ -51,4 +51,19 @@ router.put('/index/:id', isLoggedIn, (req, res) => {
   });
 });
 
+// Delete Route
+/*
+router.delete('index/:id', (req, res) => {
+  Material.findByIdAndDelete(req.params.id)
+  .then(deletedMaterial => res.redirect('/index'))
+  .catch(err => res.render('meat/error', { err: err }));
+});
+*/
+router.delete('/index/:id', (req, res) => {
+  Material.findByIdAndDelete(req.params.id)
+  .exec((err, deletedMaterial) => {
+    if(err) res.render('meat/error', { err: err });
+    else res.redirect('/index');
+  });
+});
 module.exports = router;

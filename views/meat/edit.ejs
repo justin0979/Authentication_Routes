@@ -1,6 +1,6 @@
 <% include ../partials/header %>
 
-    <h1 id='show-h1'>Make Changes to <%= material.item %></h1>
+    <h1 class='header-h1'>Make Changes to <%= material.item %></h1>
 
     <form action='/index/<%= material._id %>?_method=PUT' method='POST'>
       <div>
@@ -11,8 +11,12 @@
         <label>Description:</label>
         <textarea name='material[description]'><%- material.description %></textarea>
       </div>
-      <button>Change</button>
+      <button>Submit Changes</button>
     </form>
     
     <a class='anchors go-back' href='/index/<%= material._id %>'>Go Back</a>
+    
+    <form class='top-space' action='/index/<%= material._id %>?_method=DELETE' method='POST'>
+      <button class='delete'>DELETE</button>
+    </form>
 <% include ../partials/footer %>
