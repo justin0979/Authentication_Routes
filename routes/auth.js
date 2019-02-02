@@ -9,8 +9,7 @@ router.get('/register', (req, res) => res.render('auth/register'));
 router.post('/register', (req, res) => {
   User.register(new User({ username: req.body.username }), req.body.password)
   .then(user => passport.authenticate('local')(req, res, () => res.redirect('/index')))
-//  .catch(err => res.redirect('/login'));
-  .catch(err => res.render('meat/error', { err: err }));
+  .catch(err => res.redirect('/login'));
 });
 
 router.get('/login', (req, res) => res.render('auth/login'));
